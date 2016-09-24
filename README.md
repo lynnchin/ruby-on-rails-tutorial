@@ -1,5 +1,5 @@
-#
-Introduction
+
+# Introduction
 
 This is my personal project to keep track on my learning progress of Ruby on Rails.
 Currently I am following the Ruby on Rails tutorial book by Michael Hartl.
@@ -117,4 +117,4 @@ In below are the list of chapters I have completed while going through the book 
 # Chapters completed
 
 Chapter 1: From Zero to Deploy
-
+Chapter 2: Toy app
