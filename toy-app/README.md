@@ -5,20 +5,30 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+##
 
-* System dependencies
+Requirements
 
-* Configuration
+* ruby-2.3.1
+* rails-5.0.x
 
-* Database creation
+##
 
-* Database initialization
+Instructions 
 
-* How to run the test suite
+Start the app server
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rails server
+```
 
-* Deployment instructions
+Generate new resource(full set of model)
 
-* ...
+```
+rails generate scaffold 
+```
+
+Migrating the database
+```
+ rails db:migrate
+```
