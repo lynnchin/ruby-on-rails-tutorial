@@ -14,9 +14,16 @@ Section 2.3.1
 2. It appears that micropost gets created with empty content and no user id.
 3. Micropost is created successfully
 
-Secontion 2.3.2
+Section 2.3.2
 
 1. It will throw a validation error indicates the content is excceeding the limit of 140 characters.
+
+Section 2.3.4
+
+1. class ApplicationRecord < ActiveRecord::Base
+2. Yes.
+
+2.3.5
 
 
 
