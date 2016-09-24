@@ -1,0 +1,22 @@
+Exercise solutions:
+
+Ch.2 
+
+Section 2.2
+
+1.
+2. User.all
+3. edit.html.erb
+
+Section 2.3.1
+
+1. The text will disappear when the browser is being refreshed
+2. It appears that micropost gets created with empty content and no user id.
+3. Micropost is created successfully
+
+Secontion 2.3.2
+
+1. It will throw a validation error indicates the content is excceeding the limit of 140 characters.
+
+
+

@@ -1,0 +1,1654 @@
+Started GET "/" for ::1 at 2016-09-24 12:38:29 +1000
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 89ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160924024437)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160924024437"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-09-24 02:45:02 UTC], ["updated_at", 2016-09-24 02:45:02 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-09-24 12:55:35 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 66ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 12:55:42 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (26.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 1190ms (Views: 1115.2ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 12:57:40 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (129.0ms)
+  Rendered users/new.html.erb within layouts/application (133.9ms)
+Completed 200 OK in 268ms (Views: 189.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 12:58:10 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 12:58:18 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 53ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 12:58:28 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrICMFRxdf/BpT4Lx/X/MP6vOjs3GNyTX5C0f8dSgpxUgDIcEzzBa+q9xA4vDUs7rIOCyDHY4+PDqZ60ZVjsHQ==", "user"=>{"name"=>"Lynn", "email"=>"lynn.chin@hotmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lynn"], ["email", "lynn.chin@hotmail.com"], ["created_at", 2016-09-24 02:58:28 UTC], ["updated_at", 2016-09-24 02:58:28 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 41ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 12:58:28 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 66ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 12:58:33 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 12:59:09 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 12:59:27 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for ::1 at 2016-09-24 12:59:30 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (128.1ms)
+Started GET "/users/1" for ::1 at 2016-09-24 12:59:34 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2016-09-24 13:01:23 +1000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 63ms (Views: 33.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 13:09:30 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/1" for ::1 at 2016-09-24 13:09:34 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"71QjZJ2J3c3ht/Nxws5CYbpBuO2H6L1LK6Xt5oXeROw1ZhNI2sRpWcqvCXQqNvZq6G0AHoEogju3nMctJ9QqbQ==", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (56.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 60ms (ActiveRecord: 56.7ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 13:09:34 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-24 13:29:51 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-24 13:30:01 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (139.4ms)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x007fa0716c8338>:0x007fa0716c2758>):
+    26: 
+    27: <br>
+    28: 
+    29: <%= link_to 'New User', new_user_path %>
+  
+app/views/users/index.html.erb:29:in `_app_views_users_index_html_erb___4558174446450159389_70163537218080'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@toy-app/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.5ms)
+Started GET "/" for ::1 at 2016-09-24 13:30:35 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 14:07:47 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 53ms (Views: 37.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 14:07:51 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t4I9TEuDDU+uevTnPTK023B+QJNxGCHMaqfDi5oMHTFpfzn3viqCDYUVRjIcphl9TwiZJOX5cQX2ewh6KxHdRA==", "user"=>{"name"=>"lalala", "email"=>"lalaal"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "lalala"], ["email", "lalaal"], ["created_at", 2016-09-24 04:07:51 UTC], ["updated_at", 2016-09-24 04:07:51 UTC]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 14ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/users/2" for ::1 at 2016-09-24 14:07:51 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2016-09-24 14:13:43 +1000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20160924044147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160924044147"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-09-24 14:45:44 +1000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 799ms (Views: 737.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:46:00 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:46:02 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (160.1ms)
+  Rendered microposts/new.html.erb within layouts/application (163.5ms)
+Completed 200 OK in 215ms (Views: 205.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:46:14 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 14:46:16 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 14:46:21 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 110ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 14:46:27 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M8OYRGy7q1d0ak39lqh/9jkmgITdqoAqTYE7Zck6flXtPpz/mRIkFV8F/yi3PNJQBlBZM0lL0OPRXfCUeCe+IA==", "user"=>{"name"=>"blar", "email"=>"blar@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "blar"], ["email", "blar@example.com"], ["created_at", 2016-09-24 04:46:27 UTC], ["updated_at", 2016-09-24 04:46:27 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 16ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/users/3" for ::1 at 2016-09-24 14:46:27 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 59ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for ::1 at 2016-09-24 14:46:29 +1000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 114ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 14:46:30 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 14:46:31 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 14:46:37 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eqQ0LJbmGZTTxnLU7WA2K7LE5DeXSqMNviUrJDm/QsykWTCXY0+W1vipwAHM9JuNjbI9gAOr88Qi+eDViKKCuQ==", "user"=>{"name"=>"foo", "email"=>"foo@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "foo"], ["email", "foo@example.com"], ["created_at", 2016-09-24 04:46:37 UTC], ["updated_at", 2016-09-24 04:46:37 UTC]]
+  [1m[35m (37.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 41ms (ActiveRecord: 37.6ms)
+
+
+Started GET "/users/4" for ::1 at 2016-09-24 14:46:37 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 14:46:39 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:46:44 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:46:45 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.7ms)
+  Rendered microposts/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 14:47:03 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9MpFX5jpM54xAYt54y5tTCVoMNJ7pfHookxLE1lmV9OaDsunlFITi8sHtsqPwN7kkjq9L2rqCcv+VZIucBQSw==", "micropost"=>{"content"=>"This is a test", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "This is a test"], ["user_id", 1], ["created_at", 2016-09-24 04:47:03 UTC], ["updated_at", 2016-09-24 04:47:03 UTC]]
+  [1m[35m (60.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/1
+Completed 302 Found in 65ms (ActiveRecord: 60.7ms)
+
+
+Started GET "/microposts/1" for ::1 at 2016-09-24 14:47:03 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:47:13 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:47:30 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.0ms)
+  Rendered microposts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 14:47:35 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ojhPOrw3PTrooRAy4RuejUgiNotT/s5IWNSY2B5SNoNXg10BXAXRur9JCMQsqCRD6v98vKe78ajVpP+86vf/lw==", "micropost"=>{"content"=>"This is another test", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "This is another test"], ["user_id", 2], ["created_at", 2016-09-24 04:47:35 UTC], ["updated_at", 2016-09-24 04:47:35 UTC]]
+  [1m[35m (52.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/2
+Completed 302 Found in 57ms (ActiveRecord: 53.4ms)
+
+
+Started GET "/microposts/2" for ::1 at 2016-09-24 14:47:35 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/microposts/2" for ::1 at 2016-09-24 14:47:41 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:50:51 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:50:52 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 14:50:57 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7tRIgLDDH4V1JX+k6wYXjTcOx2Ntl2ecXMLAFa6dcwYbb1q7UPHzBSLNZ1Imta1DldONVJnSWHzRsqdxWji6Eg==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", ""], ["created_at", 2016-09-24 04:50:57 UTC], ["updated_at", 2016-09-24 04:50:57 UTC]]
+  [1m[35m (58.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/3
+Completed 302 Found in 63ms (ActiveRecord: 59.3ms)
+
+
+Started GET "/microposts/3" for ::1 at 2016-09-24 14:50:57 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:51:12 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:51:51 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.6ms)
+  Rendered microposts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 14:51:55 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RhzvGJq3npBkTp6FbaB1Kp6LwPLG1Hyo4t7oGR2/Vuezp/0jeoVyEDOmhnOgE8/kPFaKxTKRQ0hvro996Rqf8w==", "micropost"=>{"content"=>"Ruby is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro \"Matz\" Matsumoto in Japan.", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ruby is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro \"Matz\" Matsumoto in Japan."], ["user_id", 1], ["created_at", 2016-09-24 04:51:55 UTC], ["updated_at", 2016-09-24 04:51:55 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/4
+Completed 302 Found in 7ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/microposts/4" for ::1 at 2016-09-24 14:51:55 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:52:13 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/microposts/4" for ::1 at 2016-09-24 14:52:16 +1000
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V+CMurlUkdFNNfW4QqWKXsQ+Hu7saUbHtglSogEmfY+N0ryW/hklRWYtD72qXT5VlhKmHeqpebcqMHhpoywTDg==", "id"=>"4"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 4]]
+  [1m[35m (57.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 61ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:52:16 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/microposts/3" for ::1 at 2016-09-24 14:52:20 +1000
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v5rzowsum70XqBc9vjA/xazlbvryr4kIEPJTjoyV+vNlqMOPTGMvKTyw7ThWyIvO/snWCfRvtniMy3lFLp+Ucg==", "id"=>"3"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (55.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 59ms (ActiveRecord: 55.9ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:52:20 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/microposts/2" for ::1 at 2016-09-24 14:52:22 +1000
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"69s0ak3dgJJJhOBtsUuMoYDaz4rZj5LgGjKlWf+1WPYx6QRGCpA0BmKcGmhZsziq0vZ3ed9PrZCGC4+SXb82dw==", "id"=>"2"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 6ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:52:22 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/microposts/1" for ::1 at 2016-09-24 14:52:25 +1000
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DeGj4XxOMHonOvfRXSBXoQP7+qoTjtgbNvuGIN9mwMLX05PNOwOE7gwiDdS12OOqUddCWRVO52uqwqzrfWyuQw==", "id"=>"1"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (50.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 54ms (ActiveRecord: 50.9ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 14:52:25 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 14:53:23 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 47ms (Views: 31.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 14:53:28 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"98WCFrIzIlgsGoSGCvJ3f0T1vNVLMAXCy5/l9KW/rzoCfpAtUgHO2HvynHDHQc2x5ij24r91OiJG74KQURpmLg==", "micropost"=>{"content"=>"Ruby is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro \"Matz\" Matsumoto in Japan.", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.6ms)
+  Rendered microposts/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+Started GET "/users" for ::1 at 2016-09-24 15:04:48 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 126ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 15:04:50 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:68:in `set_user'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.2ms)
+Started GET "/microposts" for ::1 at 2016-09-24 15:04:56 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:04:57 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.1ms)
+  Rendered microposts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 41ms (Views: 32.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:04:59 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:05:00 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:03 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:05:06 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:05:07 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:05:13 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9yPfLL0SwhRyxmAicvLBl1mbrhXy8AT2YPpTMK1Q9SUCmM0XXSAulCUueNS/QXtZ+0bkIga1OxbtijRUWfU8MQ==", "micropost"=>{"content"=>"Blar lala", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 96ms (Views: 47.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:05:17 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:20 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2016-09-24 15:05:23 +1000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered users/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for ::1 at 2016-09-24 15:05:24 +1000
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+EABBe5aL/RhBk3AU9zOem2736KMCQve2Oz92vcW/VPYnyAV/lHrloZLfS6J1MV48syR8mRvzfgNueU5G21lA==", "user"=>{"name"=>"lalala", "email"=>"lalaal"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for ::1 at 2016-09-24 15:05:24 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+    5:   <%= @user.name %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/users/show.html.erb:5:in `_app_views_users_show_html_erb__1908979754312938413_70137603574780'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.9ms)
+Started GET "/users/2/edit" for ::1 at 2016-09-24 15:05:34 +1000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:34 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/2" for ::1 at 2016-09-24 15:05:38 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DY2K8WGD1qwRBD9nnhwmYSpBdb77AI6BXiN4JFCJDTXXv7rdJs5iODocxWJ25JJqeG3NTf3AsfHCGlLv8oNjtA==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (53.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 58ms (ActiveRecord: 54.0ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:38 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/3" for ::1 at 2016-09-24 15:05:40 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0ldQAWdJ2z1aAiDN3Wk9iMzzY0pqzenL4x/+gWS5qzEIZWAtIARvqXEa2sg1kYmDnt/buWwN1rt/JtRKxrPFsA==", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (50.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 53ms (ActiveRecord: 50.7ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:40 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/4" for ::1 at 2016-09-24 15:05:42 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v+Xd/3tFtDUQhsPOcFsyco4gKDeQxMGfrxm976KKcZ5l1+3TPAgAoTueOcuYo4Z53AyQxJYE/u8zIJckAIAfHw==", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (53.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 56ms (ActiveRecord: 53.5ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:42 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:05:44 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 15:05:45 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 15:05:53 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1qPVc9ZoP5X6nkp5izZTIx0XgiJnHzci/KI6FQbGFS9p4vuOvAvvHyFy/zHuHTqswKHvx19LBUXLkMZ5QbYIQ==", "user"=>{"name"=>"bar", "email"=>"bar@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "bar"], ["email", "bar@example.com"], ["created_at", 2016-09-24 05:05:53 UTC], ["updated_at", 2016-09-24 05:05:53 UTC]]
+  [1m[35m (23.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 29ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/users/5" for ::1 at 2016-09-24 15:05:53 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+    5:   <%= @user.name %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/users/show.html.erb:5:in `_app_views_users_show_html_erb__1908979754312938413_70137603263120'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.5ms)
+Started GET "/users/new" for ::1 at 2016-09-24 15:06:03 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 15:06:05 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GIVvTXZUp9Q4njBVzdttBswn+Ee4J+rIVDS/mKyhR03Ct19hMRkTQBOGylAlI9kNngtAtL7n1bjIDZVTDqspzA==", "user"=>{"name"=>"bar", "email"=>"bar@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "bar"], ["email", "bar@example.com"], ["created_at", 2016-09-24 05:06:05 UTC], ["updated_at", 2016-09-24 05:06:05 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 7ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/users/6" for ::1 at 2016-09-24 15:06:05 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+    5:   <%= @user.name %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/users/show.html.erb:5:in `_app_views_users_show_html_erb__1908979754312938413_70137604405380'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.1ms)
+Started GET "/users/new" for ::1 at 2016-09-24 15:06:07 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:06:09 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:06:15 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:06:17 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.9ms)
+  Rendered microposts/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:06:21 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8UocM6HTcUo1tar80YG1BF/EhK5VyTYKKOwlwdna+n4E8Q4IQeGdymJdsgocMg/K/RnOmaGMCeqlnEKlLX8zag==", "micropost"=>{"content"=>"bar", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.9ms)
+  Rendered microposts/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:06:31 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8tKs/9uQEucerwpxdqs2KEjLRDQgyVr8v/MiogUzp0oo4JzTnN2mczW38HSeU4IjGuf8xyYJZYwjyghppznJyw==", "micropost"=>{"content"=>"bar", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 55ms (Views: 36.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:06:34 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/6" for ::1 at 2016-09-24 15:06:37 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iME3iHk/SzhIsTQtbssChAPfWvkXjjdkyHa6LSlGIJtS8wekPnL/rGOpziiGM7aPUfPiChFOCBRUT5Dmi0xOGg==", "id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (51.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 57ms (ActiveRecord: 52.4ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:06:37 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/5" for ::1 at 2016-09-24 15:06:39 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/aMEVFiIGMKpachH9G7poO7huEUMZJji19UmFqEHet8nkTR4H8WsVoJxMkIcll2rvM0Atgqkp5JL7AzdAw0UXg==", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (53.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 57ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:06:39 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 15:06:40 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 15:06:48 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh9lhG3OZ9qH/EjxKKxnrxzv4PpiLaLV3z+D4yOjJWSg4mE/mGfomKyT+iQJOMoJI5k5TfbM8hxD40gSkr7lEQ==", "user"=>{"name"=>"bar", "email"=>"bar@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "bar"], ["email", "bar@example.com"], ["created_at", 2016-09-24 05:06:48 UTC], ["updated_at", 2016-09-24 05:06:48 UTC]]
+  [1m[35m (43.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 48ms (ActiveRecord: 44.0ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:06:48 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:06:50 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 15:06:57 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-09-24 15:07:04 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SpGSS23lySI2WObFlt/v+Vg07X4Q069gp4Rbgc8QSLqUbJbwmExGYB03VBC3S0JfZ0I0yYQy/6k7WJBwfg2Izw==", "user"=>{"name"=>"foo", "email"=>"foo@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "foo"], ["email", "foo@example.com"], ["created_at", 2016-09-24 05:07:04 UTC], ["updated_at", 2016-09-24 05:07:04 UTC]]
+  [1m[35m (38.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 43ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/users/8" for ::1 at 2016-09-24 15:07:04 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:07:11 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:17 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:17 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:07:18 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.0ms)
+  Rendered microposts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:07:24 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l/u6jVCGlj8i0U3PKNh29PaLHa1zHWTnKzReJpk1ouZiQKi2sLR6v3U5VTnla8w6VFZXmodYWwemRDlCbZBr8g==", "micropost"=>{"content"=>"blar lala", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (4.5ms)
+  Rendered microposts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:07:32 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jVbFlxpO8Z9Jy9QwGnPggr0w/XrnOv+CvSgru3mteI4B2s6GySPUlY/1VUokXuJWNh7Bu1c1I6WzYplT+zbYw==", "micropost"=>{"content"=>"blar lala", "user_id"=>"0"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.2ms)
+  Rendered microposts/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:07:34 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVvEO6wI7n/m3gw2vOgCnLu49F/MVXcoQ+MxVL4u/0BHafQX60Va683G9jNUELaX6ZRMrMqVSFjf2hufHCSRwQ==", "micropost"=>{"content"=>"blar lala", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.0ms)
+  Rendered microposts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:07:37 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9CHd6algq3fpooDK925/l1kMrRxvbjM0nb2lrzm+T98uE+3F7i0f48K6es8flsucCyAV72muDEQBhI9km7QhXg==", "micropost"=>{"content"=>"blar lala", "user_id"=>"4"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.1ms)
+  Rendered microposts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:38 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:41 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:07:44 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.6ms)
+  Rendered microposts/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:46 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:07:49 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:07:52 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:07:53 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:07:55 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:08:01 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:08:03 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:08:04 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.6ms)
+  Rendered microposts/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2016-09-24 15:08:11 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rPcxknfdT7NUnUjhRNFs3V5UpZ9iM5fyQ/uXkfJTBr1ZTCOpl++jMwN1UBeJYtYT/InvqJZ2qBLOi/D1BvbPqQ==", "micropost"=>{"content"=>"blar", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.3ms)
+  Rendered microposts/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/microposts" for ::1 at 2016-09-24 15:08:51 +1000
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9AZUEeEzFReB+9iH1GeMsWkFGTaPI96Ut2tR4RBmXGcuNGQ9pn6hg6rjIoI8nzi6OymhxYnj4eQrUnsqsmwy5g==", "micropost"=>{"content"=>"blar", "user_id"=>"7"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "blar"], ["user_id", 7], ["created_at", 2016-09-24 05:08:51 UTC], ["updated_at", 2016-09-24 05:08:51 UTC]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/5
+Completed 302 Found in 9ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/microposts/5" for ::1 at 2016-09-24 15:08:51 +1000
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:08:53 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-24 15:12:06 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:12:06 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 15:12:07 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:68:in `set_user'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.7ms)
+Started GET "/users/8" for ::1 at 2016-09-24 15:12:09 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 27.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-09-24 15:12:34 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:68:in `set_user'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.9ms)
+Started GET "/users/8" for ::1 at 2016-09-24 15:12:38 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 27.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8" for ::1 at 2016-09-24 15:14:27 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/8" for ::1 at 2016-09-24 15:14:55 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/8" for ::1 at 2016-09-24 15:15:04 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for nil:NilClass):
+    12: 
+    13: <p>
+    14:   <strong>Micropost:</strong>
+    15:   <%= @user.microposts.first.content %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_user_path(@user) %> |
+  
+app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__1908979754312938413_70137604213360'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.0ms)
+Started GET "/users/8" for ::1 at 2016-09-24 15:15:22 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `text' for nil:NilClass):
+    12: 
+    13: <p>
+    14:   <strong>Micropost:</strong>
+    15:   <%= @user.microposts.first.text %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_user_path(@user) %> |
+  
+app/views/users/show.html.erb:15:in `_app_views_users_show_html_erb__1908979754312938413_70137627916040'
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lynnchin/.rvm/gems/ruby-2.3.1@myapp/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (103.8ms)
+Started GET "/users/8" for ::1 at 2016-09-24 15:15:32 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/7" for ::1 at 2016-09-24 15:15:58 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:16:06 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:23:22 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 82ms (Views: 47.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:23:48 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:24:01 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:25:08 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:25:20 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45ms (Views: 39.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:25:25 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 29.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/7" for ::1 at 2016-09-24 15:26:06 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:28:35 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-09-24 15:28:36 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-09-24 15:28:37 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:28:39 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/microposts" for ::1 at 2016-09-24 15:28:41 +1000
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts/new" for ::1 at 2016-09-24 15:28:43 +1000
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (3.1ms)
+  Rendered microposts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+

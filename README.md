@@ -100,8 +100,11 @@ gem install rails --version=3.2.18
 rvm use ruby-2.3.1@myapp --ruby-version --create
 gem install rails
 ```
-
 Note: the new gemset will be empty so we need to run command ```gem install rails``` to install the most recent release of rails
+
+#### Optional: Add a gemset for existing application
+
+Follow the instructions above and run ``` bundle install ``` 
 
 #### Create rails project
 
