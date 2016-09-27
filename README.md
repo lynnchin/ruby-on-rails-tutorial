@@ -116,5 +116,5 @@ In below are the list of chapters I have completed while going through the book 
 
 # Chapters completed
 
-Chapter 1: From Zero to Deploy
-Chapter 2: Toy app
+* Chapter 1: From Zero to Deploy
+* Chapter 2: Toy app
