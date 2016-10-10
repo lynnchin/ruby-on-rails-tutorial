@@ -120,3 +120,4 @@ In below are the list of chapters I have completed while going through the book 
 * Chapter 2: Toy app
 * Chapter 3: Mostly static pages
 * Chapter 4: Rails-flavored Ruby
+* Chapter 5: Filling in the layout
