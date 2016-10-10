@@ -21,6 +21,14 @@ Things you may want to cover:
 rails test
 ```
 
+In order to run integration test only:
+
+```
+rake test:integration
+```
+
+
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
