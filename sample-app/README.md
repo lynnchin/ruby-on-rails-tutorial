@@ -13,7 +13,25 @@ Things you may want to cover:
 
 * Database creation
 
+Example on generating model object ActiveRecords
+
+```
+rails generate model User email:string username:string
+```
+
 * Database initialization
+
+Initialize database scripts
+
+```
+rails db:migrate
+```
+
+Rollback database scripts
+
+```
+rails db:rollback
+```
 
 * How to run the test suite
 
